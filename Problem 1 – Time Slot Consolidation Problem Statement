@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+int n ;
+cin>>n;
+vector<vector<int>>arr;
+for(int i = 0 ;i <n;i++){
+    int x ,y;
+    cin>>x>>y;
+    vector<int>a;
+    a.push_back(x);
+    a.push_back(y);
+    arr.push_back(a);
+}
+sort(arr.first(),arr.end());
+queue<pair<int,int>>q;
+q.push({arr[0][0],arr[0][1]});
+
+for(int i = 1;i<n;i++){
+    int x,y;
+    x = q.front().first;
+    y = q.front().second;
+    int a,b;
+    a = arr[i][0];
+    b = arr[i][1];
+    if(a > y){
+        q.push({a,b});
+    }
+    else if(x < a && y < b){
+        q.pop();
+        q.push({x,b});
+    }
+
+}
+while(!q.empty())
+{
+    int x,y;
+    x = q.front().first;
+    y = q.front().second;
+    q.pop();
+    cout<<x << " "<<y<<endl;
+    
+}
+}
