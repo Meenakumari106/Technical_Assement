@@ -13,7 +13,7 @@ for(int i = 0 ;i <n;i++){
     a.push_back(y);
     arr.push_back(a);
 }
-sort(arr.first(),arr.end());
+sort(arr.begin(),arr.end());
 queue<pair<int,int>>q;
 q.push({arr[0][0],arr[0][1]});
 
