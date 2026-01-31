@@ -1,0 +1,14 @@
+import math
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+maxsum = -1e9
+if k > 1:
+    for i in range(0,n-k+1):
+        sum = 0
+        for j in range(i,(i+k)):
+            sum += arr[j]
+        maxsum = max(maxsum,sum)
+    print("max Signal is :",maxsum)
+else:
+    print("max signal is :",max(arr))
