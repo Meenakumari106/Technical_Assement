@@ -1,0 +1,19 @@
+s = input("")
+maxlen = 0
+for i in range(0,len(s)):
+    length = 0
+    d = dict()
+    for j in range(i,len(s)):
+        if s[j] not in d:
+            d[s[j]] = j
+            length = j - i+1
+            maxlen = max(maxlen,length) 
+        else:
+            d[s[j]] = j
+            break
+print("Max len :",maxlen)
+            
+
+
+
+        
